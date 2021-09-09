@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.cssscript.com/demo/offcanvas-push-navigation-pusha/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pusha Off-canvas Navigation Example</title>
+
+    <link rel="stylesheet" href="./css/baseguide.min.css">
+    <link rel="stylesheet" href="./css/pusha-demo.min.css">
+  </head>
+  <body class="page" cz-shortcut-listen="true" aria-hidden="false">
+    <div class="pusha-panel pusha-panel--left" aria-hidden="true">
+      <div class="pusha-panel__content" tabindex="-1">
+        <div class="pusha-panel__inner">
+          <h4>My Nav</h4>
+          <nav>
+            <ul class="list-unstyled menu">
+              <li><a href="https://www.cssscript.com/demo/offcanvas-push-navigation-pusha/#">CSS</a></li>
+              <li><a href="https://www.cssscript.com/demo/offcanvas-push-navigation-pusha/#">Script</a></li>
+              <li><a href="https://www.cssscript.com/demo/offcanvas-push-navigation-pusha/#">.Net</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="pusha-panel pusha-panel--right" aria-hidden="true">
+      <div class="pusha-panel__content" tabindex="-1">
+        <div class="pusha-panel__inner">
+          <button class="btn pusha-panel__close" data-close="">Close</button>
+
+          <p>Right Panel</p>
+        </div>
+      </div>
+    </div>
+
+    <header class="page__header pusha-push">
+      <div class="container">
+        <button class="btn pull-left js-open-left-menu" aria-expanded="false">Left Menu</button>
+        <button class="btn pull-right js-open-right-menu" aria-expanded="false">Right Menu</button>
+      </div>
+    </header>
+
+    <div class="pusha-wrapper">
+      <div class="page__content">
+        <div class="container">
+          <h1>Pusha Off-canvas Navigation Example</h1>
+        </div>
+    </div>
+</div>
+
+    <script src="./js/pusha.min.js"></script>
+    <script>
+      var menuLeft = new Pusha('.pusha-panel--left', {
+        onOpen: function() {
+          console.log('Left panel opened.');
+        },
+        onClose: function() {
+          console.log('Left panel closed.');
+        }
+      });
+
+      var menuRight = new Pusha('.pusha-panel--right', {
+        onOpen: function() {
+          console.log('Reft panel opened.');
+        },
+        onClose: function() {
+          console.log('Right panel closed.');
+        }
+      });
+
+      document.querySelector('.js-open-left-menu').addEventListener('click', menuLeft.open);
+      document.querySelector('.js-open-right-menu').addEventListener('click', menuRight.open);
+    </script>
+</html>
